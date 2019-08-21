@@ -24,14 +24,14 @@ public class TextFixtureTest {
                 : DEFAULT_DAYS;
 
         IntStream.range(0, days)
-                .peek(TextFixtureTest::print)
+                .peek(day -> printDailyItems(app, day))
                 .forEach(day -> app.updateQuality());
     }
 
-    private static void print(int day) {
+    private static void printDailyItems(GildedRose app, int day) {
         System.out.println("-------- day " + day + " --------");
         System.out.println("name, sellIn, quality");
-        for (Item item : ITEMS)
+        for (Item item : app.items)
             System.out.println(item);
         System.out.println();
     }
