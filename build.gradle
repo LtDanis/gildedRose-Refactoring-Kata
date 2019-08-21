@@ -1,3 +1,4 @@
+apply from: 'dependencies.gradle'
 apply plugin: 'java'
 
 allprojects {
@@ -5,7 +6,16 @@ allprojects {
         jcenter()
     }
 
+    dependencies {
+        def testDep = rootProject.ext.testingDependencies
 
+        testImplementation testDep.junit5
+        testImplementation testDep.assertj
+        testImplementation testDep.mockito
+
+        testRuntime testDep.junit5_engine
+    }
+    
     tasks.withType(JavaCompile) {
         options.encoding = 'UTF-8'
     }
