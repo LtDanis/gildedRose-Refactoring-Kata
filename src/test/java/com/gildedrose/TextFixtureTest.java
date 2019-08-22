@@ -22,8 +22,16 @@ public class TextFixtureTest {
         GildedRose app = new GildedRose(ITEMS);
 
         IntStream.range(0, getDaysFromArgs(args))
-                .peek(app::printDailyItems)
+                .peek(day -> printDailyItems(app, day))
                 .forEach(day -> app.updateQuality());
+    }
+
+    private static void printDailyItems(GildedRose app, int day) {
+        System.out.println("-------- day " + day + " --------");
+        System.out.println("name, sellIn, quality");
+        for (Item item : app.items)
+            System.out.println(item);
+        System.out.println();
     }
 
     private static int getDaysFromArgs(String[] args) {
