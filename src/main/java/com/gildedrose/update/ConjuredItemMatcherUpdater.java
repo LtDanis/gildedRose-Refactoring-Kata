@@ -7,8 +7,8 @@ import static com.gildedrose.utils.Constants.MIN_VALUE;
 
 public class ConjuredItemMatcherUpdater implements ItemMatcherUpdater {
     @Override
-    public boolean matches(Item item) {
-        return CONJURED_MANA_CAKE.equals(item.name);
+    public String getNameToMatch() {
+        return CONJURED_MANA_CAKE;
     }
 
     @Override

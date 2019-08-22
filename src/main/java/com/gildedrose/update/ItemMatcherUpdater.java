@@ -3,5 +3,9 @@ package com.gildedrose.update;
 import com.gildedrose.Item;
 
 public interface ItemMatcherUpdater extends ItemUpdater {
-    boolean matches(Item item);
+    String getNameToMatch();
+
+    default boolean matches(Item item) {
+        return getNameToMatch().equals(item.name);
+    }
 }

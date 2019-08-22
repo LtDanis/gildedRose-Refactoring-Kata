@@ -7,8 +7,8 @@ import static com.gildedrose.utils.Constants.MAX_VALUE;
 
 public class BackstagePassesItemMatcherUpdater implements ItemMatcherUpdater {
     @Override
-    public boolean matches(Item item) {
-        return BACKSTAGE_PASSES_TO_TAFKAL80ETC.equals(item.name);
+    public String getNameToMatch() {
+        return BACKSTAGE_PASSES_TO_TAFKAL80ETC;
     }
 
     @Override
