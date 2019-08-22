@@ -28,6 +28,14 @@ class GildedRose {
                 .toArray(Item[]::new);
     }
 
+    void printDailyItems(int day) {
+        System.out.println("-------- day " + day + " --------");
+        System.out.println("name, sellIn, quality");
+        for (Item item : items)
+            System.out.println(item);
+        System.out.println();
+    }
+
     private Item updateItem(Item item) {
         return processors.stream()
                 .filter(p -> p.matches(item))

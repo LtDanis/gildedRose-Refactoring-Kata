@@ -2,6 +2,8 @@ package com.gildedrose;
 
 import java.util.stream.IntStream;
 
+import static java.util.Optional.ofNullable;
+
 public class TextFixtureTest {
     private static final int DEFAULT_DAYS = 2;
     private static final Item[] ITEMS = new Item[]{
@@ -19,20 +21,16 @@ public class TextFixtureTest {
     public static void main(String[] args) {
         GildedRose app = new GildedRose(ITEMS);
 
-        int days = args.length > 0
-                ? Integer.parseInt(args[0]) + 1
-                : DEFAULT_DAYS;
-
-        IntStream.range(0, days)
-                .peek(day -> printDailyItems(app, day))
+        IntStream.range(0, getDaysFromArgs(args))
+                .peek(app::printDailyItems)
                 .forEach(day -> app.updateQuality());
     }
 
-    private static void printDailyItems(GildedRose app, int day) {
-        System.out.println("-------- day " + day + " --------");
-        System.out.println("name, sellIn, quality");
-        for (Item item : app.items)
-            System.out.println(item);
-        System.out.println();
+    private static int getDaysFromArgs(String[] args) {
+        return ofNullable(args)
+                .filter(a -> a.length > 0)
+                .map(a -> a[0])
+                .map(s -> Integer.parseInt(s) + 1)
+                .orElse(DEFAULT_DAYS);
     }
 }
