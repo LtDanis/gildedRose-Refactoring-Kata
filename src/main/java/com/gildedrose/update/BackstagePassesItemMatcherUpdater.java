@@ -1,11 +1,11 @@
-package com.gildedrose.processor;
+package com.gildedrose.update;
 
 import com.gildedrose.Item;
 
 import static com.gildedrose.utils.Constants.BACKSTAGE_PASSES_TO_TAFKAL80ETC;
 import static com.gildedrose.utils.Constants.MAX_VALUE;
 
-public class BackstagePassesItemProcessor implements ItemProcessor {
+public class BackstagePassesItemMatcherUpdater implements ItemMatcherUpdater {
     @Override
     public boolean matches(Item item) {
         return BACKSTAGE_PASSES_TO_TAFKAL80ETC.equals(item.name);

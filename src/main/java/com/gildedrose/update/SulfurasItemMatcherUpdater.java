@@ -1,10 +1,10 @@
-package com.gildedrose.processor;
+package com.gildedrose.update;
 
 import com.gildedrose.Item;
 
 import static com.gildedrose.utils.Constants.SULFURAS_HAND_OF_RAGNAROS;
 
-public class SulfurasItemProcessor implements ItemProcessor {
+public class SulfurasItemMatcherUpdater implements ItemMatcherUpdater {
     @Override
     public boolean matches(Item item) {
         return SULFURAS_HAND_OF_RAGNAROS.equals(item.name);

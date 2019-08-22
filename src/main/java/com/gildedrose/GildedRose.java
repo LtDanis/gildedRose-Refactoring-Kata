@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-import com.gildedrose.processor.*;
+import com.gildedrose.update.*;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -8,13 +8,13 @@ import java.util.stream.Stream;
 import static java.util.Arrays.asList;
 
 class GildedRose {
-    private final List<ItemProcessor> processors = asList(
-            new BackstagePassesItemProcessor(),
-            new AgedBrieItemProcessor(),
-            new SulfurasItemProcessor(),
-            new ConjuredItemProcessor()
+    private final List<ItemMatcherUpdater> processors = asList(
+            new BackstagePassesItemMatcherUpdater(),
+            new AgedBrieItemMatcherUpdater(),
+            new SulfurasItemMatcherUpdater(),
+            new ConjuredItemMatcherUpdater()
     );
-    private final ItemProcessor defaultProcessor = new DefaultItemProcessor();
+    private final ItemUpdater defaultProcessor = new DefaultItemUpdater();
 
     Item[] items;
 

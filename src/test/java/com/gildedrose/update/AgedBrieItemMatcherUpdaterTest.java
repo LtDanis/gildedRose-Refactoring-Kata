@@ -1,4 +1,4 @@
-package com.gildedrose.processor;
+package com.gildedrose.update;
 
 import com.gildedrose.Item;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 import static com.gildedrose.utils.Constants.AGED_BRIE;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class AgedBrieItemProcessorTest extends ItemProcessorTest {
-    private ItemProcessor processor;
+class AgedBrieItemMatcherUpdaterTest extends ItemProcessorTest {
+    private ItemMatcherUpdater processor;
 
     @BeforeEach
     void setUp() {
-        processor = new AgedBrieItemProcessor();
+        processor = new AgedBrieItemMatcherUpdater();
     }
 
     @Test

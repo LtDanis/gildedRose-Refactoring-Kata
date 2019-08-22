@@ -1,25 +1,16 @@
-package com.gildedrose.processor;
+package com.gildedrose.update;
 
 import com.gildedrose.Item;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-class DefaultItemProcessorTest extends ItemProcessorTest {
+class DefaultItemUpdaterTest extends ItemProcessorTest {
     private static final String RANDOM_NAME = "RANDOM";
-    private ItemProcessor processor;
+    private ItemUpdater processor;
 
     @BeforeEach
     void setUp() {
-        processor = new DefaultItemProcessor();
-    }
-
-    @Test
-    void testIfMatchesWithRandomName() {
-        final boolean actual = processor.matches(new Item(RANDOM_NAME, 0, 0));
-
-        assertThat(actual).isTrue();
+        processor = new DefaultItemUpdater();
     }
 
     @Test

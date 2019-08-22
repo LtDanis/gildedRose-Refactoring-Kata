@@ -1,4 +1,4 @@
-package com.gildedrose.processor;
+package com.gildedrose.update;
 
 import com.gildedrose.Item;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 import static com.gildedrose.utils.Constants.BACKSTAGE_PASSES_TO_TAFKAL80ETC;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class BackstagePassesItemProcessorTest extends ItemProcessorTest {
-    private ItemProcessor processor;
+class BackstagePassesItemMatcherUpdaterTest extends ItemProcessorTest {
+    private ItemMatcherUpdater processor;
 
     @BeforeEach
     void setUp() {
-        processor = new BackstagePassesItemProcessor();
+        processor = new BackstagePassesItemMatcherUpdater();
     }
 
     @Test

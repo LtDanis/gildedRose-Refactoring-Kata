@@ -1,11 +1,11 @@
-package com.gildedrose.processor;
+package com.gildedrose.update;
 
 import com.gildedrose.Item;
 
 import static com.gildedrose.utils.Constants.AGED_BRIE;
 import static com.gildedrose.utils.Constants.MAX_VALUE;
 
-public class AgedBrieItemProcessor implements ItemProcessor {
+public class AgedBrieItemMatcherUpdater implements ItemMatcherUpdater {
     @Override
     public boolean matches(Item item) {
         return AGED_BRIE.equals(item.name);

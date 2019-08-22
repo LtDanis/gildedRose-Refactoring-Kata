@@ -1,4 +1,4 @@
-package com.gildedrose.processor;
+package com.gildedrose.update;
 
 import com.gildedrose.Item;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 import static com.gildedrose.utils.Constants.CONJURED_MANA_CAKE;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class ConjuredItemProcessorTest extends ItemProcessorTest {
-    private ItemProcessor processor;
+class ConjuredItemMatcherUpdaterTest extends ItemProcessorTest {
+    private ItemMatcherUpdater processor;
 
     @BeforeEach
     void setUp() {
-        processor = new ConjuredItemProcessor();
+        processor = new ConjuredItemMatcherUpdater();
     }
 
     @Test
