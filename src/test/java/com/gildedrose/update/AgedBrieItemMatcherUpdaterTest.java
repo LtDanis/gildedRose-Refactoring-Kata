@@ -30,14 +30,14 @@ class AgedBrieItemMatcherUpdaterTest extends ItemProcessorTest {
     }
 
     @Test
-    void testUpdateItemNegativeSellInMaxValue() {
+    void testUpdateItemWithNegativeSellInAndMaxValue() {
         final Item actual = processor.updateItem(new Item(AGED_BRIE, 0, 50));
 
         assertItem(actual, AGED_BRIE, -1, 50);
     }
 
     @Test
-    void testUpdateItemMaxValue() {
+    void testUpdateItemWithMaxValue() {
         final Item actual = processor.updateItem(new Item(AGED_BRIE, 5, 50));
 
         assertItem(actual, AGED_BRIE, 4, 50);

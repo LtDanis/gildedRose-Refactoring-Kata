@@ -30,14 +30,14 @@ class BackstagePassesItemMatcherUpdaterTest extends ItemProcessorTest {
     }
 
     @Test
-    void testUpdateItemNegativeSellInAndMaxValue() {
+    void testUpdateItemWithNegativeSellInAndMaxValue() {
         final Item actual = processor.updateItem(new Item(BACKSTAGE_PASSES_TO_TAFKAL80ETC, 0, 50));
 
         assertItem(actual, BACKSTAGE_PASSES_TO_TAFKAL80ETC, -1, 0);
     }
 
     @Test
-    void testUpdateItemMaxValue() {
+    void testUpdateItemWithMaxValue() {
         final Item actual = processor.updateItem(new Item(BACKSTAGE_PASSES_TO_TAFKAL80ETC, 5, 50));
 
         assertItem(actual, BACKSTAGE_PASSES_TO_TAFKAL80ETC, 4, 50);

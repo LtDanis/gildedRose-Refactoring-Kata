@@ -8,13 +8,13 @@ import java.util.stream.Stream;
 import static java.util.Arrays.asList;
 
 class GildedRose {
-    private final List<ItemMatcherUpdater> processors = asList(
+    private final List<ItemMatcherUpdater> updaters = asList(
             new BackstagePassesItemMatcherUpdater(),
             new AgedBrieItemMatcherUpdater(),
             new SulfurasItemMatcherUpdater(),
             new ConjuredItemMatcherUpdater()
     );
-    private final ItemUpdater defaultProcessor = new DefaultItemUpdater();
+    private final ItemUpdater defaultUpdater = new DefaultItemUpdater();
 
     Item[] items;
 
@@ -29,10 +29,10 @@ class GildedRose {
     }
 
     private Item updateItem(Item item) {
-        return processors.stream()
+        return updaters.stream()
                 .filter(p -> p.matches(item))
                 .findFirst()
                 .map(p -> p.updateItem(item))
-                .orElse(defaultProcessor.updateItem(item));
+                .orElse(defaultUpdater.updateItem(item));
     }
 }

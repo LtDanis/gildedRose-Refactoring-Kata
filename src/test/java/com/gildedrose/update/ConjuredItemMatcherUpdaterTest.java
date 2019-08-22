@@ -30,14 +30,14 @@ class ConjuredItemMatcherUpdaterTest extends ItemProcessorTest {
     }
 
     @Test
-    void testUpdateItemNegativeSellInMinValue() {
+    void testUpdateItemWithNegativeSellInAndMinValue() {
         final Item actual = processor.updateItem(new Item(CONJURED_MANA_CAKE, 0, 0));
 
         assertItem(actual, CONJURED_MANA_CAKE, -1, 0);
     }
 
     @Test
-    void testUpdateItemMinValue() {
+    void testUpdateItemWithMinValue() {
         final Item actual = processor.updateItem(new Item(CONJURED_MANA_CAKE, 5, 0));
 
         assertItem(actual, CONJURED_MANA_CAKE, 4, 0);

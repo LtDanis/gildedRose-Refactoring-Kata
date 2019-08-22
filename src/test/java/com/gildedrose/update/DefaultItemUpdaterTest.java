@@ -21,7 +21,7 @@ class DefaultItemUpdaterTest extends ItemProcessorTest {
     }
 
     @Test
-    void testUpdateItemMinValue() {
+    void testUpdateItemWithMinValue() {
         final Item actual = processor.updateItem(new Item(RANDOM_NAME, 5, 0));
 
         assertItem(actual, RANDOM_NAME, 4, 0);
