@@ -4,7 +4,9 @@ import com.gildedrose.Item;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class DefaultItemUpdaterTest extends ItemProcessorTest {
+import static com.gildedrose.update.ItemProcessorTest.assertItem;
+
+class DefaultItemUpdaterTest {
     private static final String RANDOM_NAME = "RANDOM";
     private ItemUpdater processor;
 

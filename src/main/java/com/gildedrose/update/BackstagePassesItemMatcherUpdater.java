@@ -19,7 +19,7 @@ public class BackstagePassesItemMatcherUpdater implements ItemMatcherUpdater {
 
     private int countNewQuality(int sellIn, int quality) {
         final int newQuality = newQuality(sellIn, quality);
-        return newQuality < MAX_VALUE ? newQuality : MAX_VALUE;
+        return Math.min(newQuality, MAX_VALUE);
     }
 
     private int newQuality(int sellIn, int quality) {

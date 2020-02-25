@@ -21,6 +21,6 @@ public class ConjuredItemMatcherUpdater implements ItemMatcherUpdater {
         final int newQuality = sellIn > 0
                 ? quality - 2
                 : quality - 4;
-        return newQuality > MIN_VALUE ? newQuality : MIN_VALUE;
+        return Math.max(newQuality, MIN_VALUE);
     }
 }

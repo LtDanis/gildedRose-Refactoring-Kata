@@ -21,6 +21,6 @@ public class AgedBrieItemMatcherUpdater implements ItemMatcherUpdater {
         final int newQuality = sellIn > 0
                 ? quality + 1
                 : quality + 2;
-        return newQuality < MAX_VALUE ? newQuality : MAX_VALUE;
+        return Math.min(newQuality, MAX_VALUE);
     }
 }

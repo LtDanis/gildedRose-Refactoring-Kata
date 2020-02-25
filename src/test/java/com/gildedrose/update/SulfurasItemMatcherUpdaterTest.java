@@ -4,10 +4,11 @@ import com.gildedrose.Item;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static com.gildedrose.update.ItemProcessorTest.assertItem;
 import static com.gildedrose.utils.Constants.SULFURAS_HAND_OF_RAGNAROS;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class SulfurasItemMatcherUpdaterTest extends ItemProcessorTest {
+class SulfurasItemMatcherUpdaterTest {
     private ItemMatcherUpdater processor;
 
     @BeforeEach
